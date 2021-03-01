@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 
 #$ -P bf528
 #$ -cwd
@@ -10,9 +10,9 @@ echo "Started: $(date +%F)"
 echo "Running in directory: $PWD"
 
 # Load modules
-module load samtools/samtools-0.1.19_gnu446 bowtie2 boost tophat
+module load samtools/0.1.19 bowtie2 boost tophat
 
 # TopHat command
-tophat -r 200 -G /project/bf528/project_2/reference/annot/mm9.gtf --segment-length=20 --segment-mismatches=1 --no-novel-juncs -o P0_1_tophat -p 16 /projectnb/bf528/project_2/reference/mm9 /project/bf528/project_2/data/samples/P0_2/P0_2_1.fastq /project/bf528/project_2/data/samples/P0_2/P0_2_2.fastq 
+tophat -r 200 -G /project/bf528/project_2/reference/annot/mm9.gtf --segment-length=20 --segment-mismatches=1 --no-novel-juncs -o P0_1_tophat -p 16 /project/bf528/project_2/reference/mm9 /project/bf528/project_2/data/samples/P0_2/P0_2_1.fastq /project/bf528/project_2/data/samples/P0_2/P0_2_2.fastq 
 
 echo "Job finished: $(date +%F)"
