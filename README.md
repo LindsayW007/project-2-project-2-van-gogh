@@ -35,3 +35,26 @@ O’Meara et al. Transcriptional Reversion of Cardiac Myocyte Fate During Mammal
 * Outputs: `P0_1_cufflinks/genes.fpkm_tracking`
 * Counts how reads map to genomic regions defined by an annotation
 * Cufflinks parameters are `--compatible-hits-norm` 
+
+## Analyst
+### Analyst.R
+* Dependencies: R
+* Inputs: `gene_exp.diff`
+* Outputs: `top_10_genes.csv`: Top 10 genes with the lowest q value
+* `Log2 Fold Change for All Genes`: Histogram of log2 fold-change of all genes 
+* `Log2 Fold Change for Significant Genes`: Histogram of log2 fold-change of significant genes 
+* `up_reg_genes.csv`: Up regulated genes
+* `down_reg_genes.csv`: Down regulated genes
+
+### Ontology.R
+* Dependencies: R
+* Inputs: GO output .txt files
+* Outputs: `ontology_table.csv`: Summarizes the GO enrichment clusters
+
+### GO_barplot.R
+* Dependencies: R
+* Outputs: `up.png`: Summarizes the top 5 GO enrichment clusters for up-regulated genes
+* `up.png`: Summarizes the top 5 GO enrichment clusters for down-regulated genes
+
+
+
